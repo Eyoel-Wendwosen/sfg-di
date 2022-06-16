@@ -1,6 +1,7 @@
 package com.feleke.eyoel.sfgdi;
 
 import com.feleke.eyoel.sfgdi.contorllers.ConstructorInjectedController;
+import com.feleke.eyoel.sfgdi.contorllers.I18nController;
 import com.feleke.eyoel.sfgdi.contorllers.MyController;
 import com.feleke.eyoel.sfgdi.contorllers.PropertyInjectedController;
 import com.feleke.eyoel.sfgdi.contorllers.SetterInjectedController;
@@ -16,11 +17,14 @@ public class SfgDiApplication {
 
     MyController myController = (MyController) context.getBean("myController");
 
-    String greeting = myController.sayHello();
-
-    System.out.println(greeting);
-
     System.out.println("----------- Spring Framework DI ----------- ");
+
+    System.out.println(myController.getGreeting());
+
+    System.out.println("----------- I18n Greeting Service (Profile) ----------- ");
+
+    I18nController i18nController = (I18nController) context.getBean("i18nController");
+    System.out.println(i18nController.getGreeting());
 
     System.out.println("----------- Property Injected ----------- ");
 

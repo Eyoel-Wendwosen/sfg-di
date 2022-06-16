@@ -1,6 +1,6 @@
 package com.feleke.eyoel.sfgdi.contorllers;
 
-import com.feleke.eyoel.sfgdi.services.PropertyInjectedGreetingService;
+import com.feleke.eyoel.sfgdi.services.SetterInjectedGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ class SetterInjectedControllerTest {
   void setUp() {
     controller = new SetterInjectedController();
 
-    controller.setGreeting(new PropertyInjectedGreetingService());
+    controller.setGreeting(new SetterInjectedGreetingService());
   }
 
   @Test
